@@ -107,9 +107,13 @@ Follow Keep a Changelog format (https://keepachangelog.com). First-pass linear
 work does not require changelog entries — only revisions do.
 
 ### 2.4 References & Citations
-- All methodological claims cite a key from `references/bibliography.bib`.
-- The AI must never invent a citation. If a claim needs a source not in the
-  bibliography, mark it `[UNVERIFIED — needs DOI]` and flag it to the user.
+- All methodological claims cite a key from `references/bibliography.bib`, or a
+  `retrieved_academic` key from `research/sources.bib` with its tier visible.
+- Contextual claims may cite a `contextual` key from `research/sources.bib`.
+- The AI must never invent a citation or cite from memory. Every citation leads
+  to something actually opened (see `references/research_protocol.md`). If a
+  claim needs a source that does not meet this, mark it
+  `[UNVERIFIED — needs DOI]` and flag it to the user.
 - Each methodological statement carries an **epistemic status tag**:
   - `[CONSENSUS]` — established in peer-reviewed literature
   - `[CONVENTION]` — standard practice, not always formally justified
@@ -135,6 +139,18 @@ See `references/formula_template.md` for the standard block.
 - Input data files must be hashed (SHA-256) and the hash stored in the manifest.
 - AI-generated content in reports must be marked with: `[AI-assisted, human
   review: pending/done]`.
+
+### 2.7 Research
+Research is transversal, not a stage: it can happen at any point, and only when
+the answer could change a decision in the analysis. Follow
+`references/research_protocol.md`. In short:
+- Ask once whether the project is confidential before the first search.
+- Run a short context search at Stage 1, then method or finding searches as
+  needed. Searches are automatic and always logged.
+- If a result would change the approved plan, tell the user and do not apply the
+  change without new approval.
+- Anything suggested by a search after the data was examined stays exploratory.
+- If no search tool is available, state that no research was performed.
 
 ---
 
@@ -169,6 +185,11 @@ cadre_workspace/
 ├── CHANGELOG.md
 ├── analysis_plan.yaml          ← produced at Stage 2
 ├── requirements.txt            ← maintained throughout
+├── research/                   ← transversal; see research_protocol.md
+│   ├── domain_brief.md
+│   ├── research_log.md
+│   ├── sources.bib
+│   └── snapshots/
 ├── stage_01/
 │   └── project_context.md
 ├── stage_02/
@@ -188,6 +209,7 @@ Load these as needed — do not load all at once:
 | File | Load when |
 |------|-----------|
 | `references/stages.md` | Starting any stage |
+| `references/research_protocol.md` | Before any search, and when citing a source found during the analysis |
 | `references/philosophy.md` | Questions arise about methodology or design decisions |
 | `references/manifest_spec.md` | Writing or reading the artifact manifest |
 | `references/formula_template.md` | Documenting any mathematical formula |

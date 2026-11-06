@@ -53,6 +53,10 @@ W3C PROV model for provenance.
 | `project_context` | Stage 1 context document |
 | `assessment_report` | Stage 2 assessment document |
 | `analysis_plan` | Stage 2 YAML plan |
+| `domain_brief` | Short summary of the context research |
+| `research_log` | Record of every search |
+| `source_list` | Project-level `research/sources.bib` |
+| `source_snapshot` | Retrieved text backing a direct quote |
 | `raw_data` | Input data file (never modified) |
 | `data_dictionary` | Variable-level documentation |
 | `raw_data_profile` | Statistical profile of raw data |

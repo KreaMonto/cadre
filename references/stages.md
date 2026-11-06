@@ -10,6 +10,10 @@
 - [Stage 7: Robustness & Validation](#stage-7-robustness--validation)
 - [Stage 8: Communication & Reporting](#stage-8-communication--reporting)
 
+> **Research applies across stages.** Whenever the answer to a question could
+> change a decision, search and log it per `references/research_protocol.md`.
+> Findings from searches run after the data was examined stay exploratory.
+
 ---
 
 ## Stage 1: Project Context
@@ -19,6 +23,16 @@ Equivalent to the problem definition phase in CRISP-DM and the pre-analysis
 plan in preregistered research (Nosek et al., 2018).
 
 **Inputs:** Conversation with the user.
+
+**Process:**
+1. Ask whether the project is confidential (`research_protocol.md`, Section 2).
+2. Take in the context the user provides. Do not examine the data yet.
+3. Run the context search and write `research/domain_brief.md`, proposing the
+   project's morphology: topic, industry, analysis type, audience, regulation,
+   and a free-text note.
+4. Use the brief to ask better questions (below), then have the user confirm or
+   correct the morphology.
+5. Write `stage_01/project_context.md`.
 
 **Questions to ask the user** (adapt to conversation; not all may be needed):
 
@@ -31,9 +45,10 @@ plan in preregistered research (Nosek et al., 2018).
 7. What counts as a successful outcome?
 8. Preferred output language for reports?
 
-**Output:** `stage_01/project_context.md`
+**Outputs:** `research/domain_brief.md`, `research/research_log.md`,
+`research/sources.bib`, and `stage_01/project_context.md`
 
-Template:
+Template for `project_context.md`:
 ```markdown
 # Project Context — [Project Name]
 **Date:** YYYY-MM-DD
@@ -50,9 +65,13 @@ Template:
 | ...    | ...    | ...            | ...               |
 
 ## 3. Domain & Audience
+- **Topic:** ...
 - **Domain:** ...
+- **Industry:** ...
 - **Primary audience:** ...
 - **Technical level of audience:** ...
+- **Regulation:** ...
+- **Notes:** ...
 
 ## 4. Analysis Type
 - [ ] Exploratory (hypothesis-generating)
@@ -71,7 +90,9 @@ Template:
 ...
 ```
 
-**Exit gate:** User has confirmed the project context document is accurate.
+**Exit gate:** User has confirmed the project context document is accurate,
+including the morphology. The domain brief exists, or the context document states
+that no research was performed and why.
 
 ---
 
@@ -346,7 +367,8 @@ report calibrated to the stated audience.
 3. Results (with figures and tables)
 4. Limitations (prominent, not buried)
 5. Conclusions
-6. References (from `bibliography.bib` only — no unverified citations)
+6. References (from `bibliography.bib` and `research/sources.bib`, with the tier
+   of project-level sources visible — no unverified citations)
 7. Appendix: AI assistance log
 
 **Exit gate:** User reviews and marks `reviewed_by_human: true` in the

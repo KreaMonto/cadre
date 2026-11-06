@@ -44,9 +44,16 @@ Large language models fabricate references. This is not a minor inconvenience �
 it is a fundamental reliability problem for academic and professional work.
 
 CADRE's response:
-- All citations must resolve to a key in `bibliography.bib`.
-- The bibliography is maintained by humans and verified against DOIs.
-- Any claim requiring a citation not in the bibliography is flagged
+- Every citation must be traceable: it resolves to a BibTeX key and leads to
+  something that was actually opened and that another person can check. Nothing
+  is cited from memory.
+- `bibliography.bib` is curated by humans and is the standard for methodological
+  claims. Entries are verified against their DOI and metadata.
+- Sources found during an analysis go in the project's `research/sources.bib`.
+  Peer-reviewed work may support methodological claims with its tier visible and
+  human review pending. Non-academic sources may support context only, never a
+  method. See `research_protocol.md`.
+- Any claim requiring a citation that meets none of these is flagged
   `[UNVERIFIED — needs DOI]` and must not be presented as established.
 - The AI is an analyst and writer, not an authority. Human review is the
   final verification layer.
@@ -66,6 +73,9 @@ as if they were confirmatory. CADRE enforces the distinction:
 - **Confirmatory (Stage 6):** tests pre-specified hypotheses. Any hypothesis
   not declared before data examination is labeled exploratory regardless
   of when the analysis ran.
+- **Research:** anything suggested by a literature search run after the data was
+  examined stays exploratory, whatever the source says. Such searches must also
+  look for evidence against the proposed explanation.
 
 This follows the preregistration movement (Nosek et al., 2018) and addresses
 HARKing — Hypothesizing After Results are Known (Kerr, 1998).

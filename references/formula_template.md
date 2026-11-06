@@ -12,7 +12,7 @@ write "N/A — [reason]" if a section genuinely does not apply.
 ### [Formula Name]
 
 **Epistemic status:** [CONSENSUS / CONVENTION / HEURISTIC / DEBATED]
-**Reference:** [bib key — must exist in bibliography.bib]
+**Reference:** [bib key — must exist in bibliography.bib, or in research/sources.bib at tier retrieved_academic]
 
 #### Formal Definition
 

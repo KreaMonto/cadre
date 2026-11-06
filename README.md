@@ -16,9 +16,12 @@ citations, and reproducible scripts at every step.
   Limitations are part of every output, not footnotes.
 - **Explicit epistemic status.** Every methodological claim is tagged:
   `[CONSENSUS]`, `[CONVENTION]`, `[HEURISTIC]`, or `[DEBATED]`.
-- **No invented citations.** All references resolve to a DOI in the curated
-  `bibliography.bib`. AI-generated text that requires a source not in the
-  bibliography is flagged `[UNVERIFIED — needs DOI]`.
+- **No invented citations.** Every citation is traceable to something actually
+  opened. Methodological claims need academic sources, from the curated
+  `bibliography.bib` or found during the analysis with human review pending.
+  Anything else is flagged `[UNVERIFIED — needs DOI]`.
+- **Research when it matters.** Research is not a stage: it happens at any point
+  where the answer could change a decision, and every search is logged.
 - **Separation of exploration and confirmation.** EDA generates questions;
   Stage 6 tests them. The distinction is enforced, not advisory.
 - **Modularity over completeness.** Not every project needs every stage.
@@ -72,9 +75,10 @@ cadre/
 ├── references/
 │   ├── stages.md                   ← Detailed stage instructions
 │   ├── philosophy.md               ← Epistemic principles
+│   ├── research_protocol.md        ← Transversal research rules and templates
 │   ├── manifest_spec.md            ← Artifact manifest schema
 │   ├── formula_template.md         ← Formula documentation standard
-│   ├── bibliography.bib            ← Curated references (DOI-verified)
+│   ├── bibliography.bib            ← Curated references (DOI verification pending)
 │   └── glossary.md                 ← Technical terms in multiple languages
 ├── assets/
 │   └── CHANGELOG_template.md       ← Changelog template for projects
@@ -92,6 +96,7 @@ cadre_workspace/
 ├── CHANGELOG.md
 ├── analysis_plan.yaml
 ├── requirements.txt
+├── research/
 ├── stage_01/project_context.md
 ├── stage_02/assessment_report.md
 ├── stage_03/
