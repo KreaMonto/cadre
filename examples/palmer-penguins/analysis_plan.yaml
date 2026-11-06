@@ -1,0 +1,74 @@
+cadre_version: "0.1.0-mvp"
+project_name: "Palmer Penguins — Morphological Differentiation by Species"
+created_at: "2026-11-06T00:00:00Z"
+output_language: "en"
+
+# Scope note: this is a Stage 1-2 test run for CADRE validation.
+# Stages 3-8 are assessed and reasoned below, but their execution
+# is explicitly deferred. This plan documents what WOULD be done
+# if the analysis were to proceed in full.
+
+stages:
+  stage_03_ingestion:
+    include: true
+    reason: >
+      The dataset arrives as a raw CSV from a public repository.
+      Formal profiling (schema, null counts, type verification) and
+      SHA-256 hashing are required before any analysis to establish
+      provenance. A data dictionary does not exist for this CSV
+      format and must be created.
+    deferred: true
+    deferred_reason: "Outside scope of this Stage 1-2 test run."
+
+  stage_04_cleaning:
+    include: true
+    reason: >
+      11 missing values in `sex` (3.2%) and 2 in continuous morphometric
+      variables require a declared handling strategy. The decision between
+      complete-case analysis and imputation has downstream implications
+      for any sex-disaggregated comparison and must be documented and
+      justified before analysis proceeds.
+    deferred: true
+    deferred_reason: "Outside scope of this Stage 1-2 test run."
+
+  stage_05_eda:
+    include: true
+    reason: >
+      The central question is explicitly exploratory: identifying
+      morphological patterns across species, islands, and sexes.
+      EDA is the primary analytical instrument for this objective.
+      Univariate distributions, bivariate relationships, and
+      species-level comparisons are all warranted.
+    deferred: true
+    deferred_reason: "Outside scope of this Stage 1-2 test run."
+
+  stage_06_analysis:
+    include: true
+    reason: >
+      If the EDA reveals clear candidate variables for species
+      differentiation, formal descriptive statistics (means, standard
+      deviations, confidence intervals by group) are appropriate.
+      No inferential hypothesis testing is pre-specified at this stage;
+      any tests run would be labeled exploratory.
+    epistemic_note: >
+      Any statistical tests emerging from EDA findings would be
+      exploratory by definition (post-hoc relative to data examination).
+      They would be clearly labeled [EXPLORATORY] and not interpreted
+      as confirmatory evidence. See philosophy.md, Section 4.
+    deferred: true
+    deferred_reason: "Outside scope of this Stage 1-2 test run."
+
+  stage_07_robustness:
+    include: true
+    reason: >
+      If Stage 6 produces group comparisons, sensitivity to outlier
+      treatment and to missing-value strategy (complete-case vs.
+      imputation) should be verified. The small sample size per group
+      (~100-150 per species) makes robustness checks particularly
+      relevant.
+    justification_if_excluded: "N/A — included."
+    deferred: true
+    deferred_reason: "Outside scope of this Stage 1-2 test run."
+
+approved_by_user: false
+approved_at: null
