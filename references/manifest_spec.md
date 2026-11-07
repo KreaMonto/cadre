@@ -19,7 +19,7 @@ W3C PROV model for provenance.
   "created_at": "ISO-8601",
   "last_updated": "ISO-8601",
   "output_language": "ISO 639-1 code (e.g. en, es, fr)",
-  "environment": "claude_code | claude_ai",
+  "environment": "claude_code | claude_ai | unknown",
   "analysis_plan": "./analysis_plan.yaml",
 
   "artifacts": [
@@ -30,7 +30,7 @@ W3C PROV model for provenance.
       "path": "relative path from workspace root",
       "sha256": "hex string — computed at time of write",
       "produced_at": "ISO-8601",
-      "language": "ISO 639-1 code",
+      "language": "ISO 639-1 code, or null if not a document (data, code, models)",
       "reviewed_by_human": false,
       "reviewed_by": null,
       "reviewed_at": null,
@@ -79,12 +79,26 @@ W3C PROV model for provenance.
 
 **Claude Code:**
 ```bash
-sha256sum path/to/file
-# or in Python:
-import hashlib
-with open(path, 'rb') as f:
-    sha256 = hashlib.sha256(f.read()).hexdigest()
+# Register a new artifact
+python scripts/hash_artifact.py cadre_workspace/stage_03/data_dictionary.md \
+    --type data_dictionary --stage 3
+
+# Update a registered artifact in place
+python scripts/hash_artifact.py cadre_workspace/stage_03/data_dictionary.md
 ```
+
+Two safeguards apply when the hash of a registered artifact changes:
+- A `raw_data` file is refused and the manifest is left unchanged, because raw
+  data must never be modified. Running the script on raw data therefore also
+  checks it against its registered hash.
+- A reviewed artifact has its review cleared, because the review applied to the
+  old content. Add a changelog entry.
+
+The manifest does not record its own hash, because writing the hash would change
+the file.
+
+A registered hash shows that a file has not changed since registration. It does
+not show that the file matches any external original.
 
 **Claude.ai:** Ask the user to compute the hash using their local tool and
 provide it, or note `"sha256": "unverified — computed by user"` and include

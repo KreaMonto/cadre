@@ -196,7 +196,8 @@ description. [CONVENTION]
 **Inputs:** Raw data files (registered in manifest with SHA-256 hash).
 
 **Checklist:**
-- [ ] Hash all input files and register in manifest
+- [ ] Hash all input files and register in manifest (`scripts/init_workspace.py
+      --data` or `scripts/hash_artifact.py`)
 - [ ] Document schema: column names, types, units, expected ranges
 - [ ] Compute basic profile: row count, null counts, duplicate rows,
       cardinality of categoricals, range/mean/std/quantiles of numerics

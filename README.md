@@ -82,8 +82,14 @@ cadre/
 │   └── glossary.md                 ← Technical terms in multiple languages
 ├── assets/
 │   └── CHANGELOG_template.md       ← Changelog template for projects
-└── scripts/
-    └── (future: hash utility, manifest initializer, etc.)
+├── scripts/
+│   ├── init_workspace.py           ← Creates the workspace and manifest
+│   ├── hash_artifact.py            ← Registers an artifact's SHA-256
+│   └── cadre_manifest.py           ← Helpers shared by both scripts
+├── tests/
+│   └── test_scripts.py             ← Tests for the scripts
+└── examples/
+    └── palmer-penguins/            ← Worked example (Stages 1–2)
 ```
 
 ---
@@ -106,6 +112,28 @@ cadre_workspace/
 ├── stage_07/
 └── stage_08/
 ```
+
+---
+
+## Scripts
+
+The scripts need Python 3 and only the standard library.
+
+```bash
+# Create the workspace and hash the input data
+python scripts/init_workspace.py --project "My Project" --lang en --data raw/data.csv
+
+# Register an artifact, or update its entry if it is already registered
+python scripts/hash_artifact.py cadre_workspace/stage_03/data_dictionary.md \
+    --type data_dictionary --stage 3
+
+# Run the tests
+python -m unittest discover tests
+```
+
+The environment is recorded as `claude_code` when detected and `unknown`
+otherwise. Claude.ai has no comparable signal, so pass `--environment claude_ai`
+there.
 
 ---
 
@@ -134,7 +162,7 @@ CADRE is designed for community use. Before contributing:
 
 `0.1.0-mvp` — Initial release. Covers Stages 0–2 and conventions.
 Stages 3–8 are defined in `references/stages.md` with templates.
-Scripted utilities (hashing, manifest init) are planned for `0.2.0`.
+Scripted utilities (hashing, manifest init) are in development for `0.2.0`.
 
 ---
 

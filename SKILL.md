@@ -89,7 +89,7 @@ Minimum entry per artifact:
   "id": "unique-slug",
   "stage": 3,
   "type": "data_dictionary",
-  "path": "./cadre_workspace/stage_03/data_dictionary.md",
+  "path": "stage_03/data_dictionary.md",
   "sha256": "<hash>",
   "produced_at": "ISO-8601 timestamp",
   "language": "es",
@@ -97,8 +97,9 @@ Minimum entry per artifact:
 }
 ```
 
-In Claude.ai, present the updated manifest as a downloadable file after
-every stage.
+In Claude Code, register artifacts by running `scripts/hash_artifact.py` from
+this skill's directory; do not write hashes by hand. In Claude.ai, present the
+updated manifest as a downloadable file after every stage.
 
 ### 2.3 Changelog
 Any change to a **previously validated artifact** (dataset, cleaning rule,
@@ -223,7 +224,9 @@ Load these as needed — do not load all at once:
 At the very start of a CADRE session:
 1. Detect and announce environment (Section 0).
 2. If Claude Code: check for existing `cadre_manifest.json`. If found, load it
-   and summarize the project state. If not found, initialize workspace.
+   and summarize the project state. If not found, ask for the project name and
+   output language, then run `scripts/init_workspace.py` from this skill's
+   directory, passing any known input files with `--data`.
 3. If Claude.ai: ask the user to upload `cadre_manifest.json` if this is a
    continuing session. If new session, acknowledge that all files must be saved
    manually.

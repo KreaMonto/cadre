@@ -1,2 +1,4 @@
 # Retrieved source text may be copyrighted; see references/research_protocol.md
 **/research/snapshots/
+
+__pycache__/
