@@ -78,7 +78,7 @@ cadre/
 │   ├── research_protocol.md        ← Transversal research rules and templates
 │   ├── manifest_spec.md            ← Artifact manifest schema
 │   ├── formula_template.md         ← Formula documentation standard
-│   ├── bibliography.bib            ← Curated references (DOI verification pending)
+│   ├── bibliography.bib            ← Curated references (registry-checked; human review pending)
 │   └── glossary.md                 ← Technical terms in multiple languages
 ├── assets/
 │   └── CHANGELOG_template.md       ← Changelog template for projects

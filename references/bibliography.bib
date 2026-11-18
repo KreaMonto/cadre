@@ -1,9 +1,12 @@
 % CADRE — Curated Bibliography
 % Policy: entries must be verified against their DOI and metadata before inclusion.
-% Status: current entries were drafted from memory; human verification is pending.
+% Status: entries were drafted from memory. On 2026-11-10 every DOI was resolved and
+%   its title, authors, year, venue, volume, issue, and pages were compared with the
+%   Crossref/DataCite record; discrepancies were corrected. Entries without a DOI were
+%   checked for one, and their URLs were opened. Human verification is still pending.
 % Contributors: do NOT add entries without confirming the DOI resolves correctly.
 % Format: BibTeX. Keys follow AuthorYYYY convention.
-% Last verified: not yet verified
+% Last checked against DOI registries: 2026-11-10
 
 % ─── REPRODUCIBILITY ──────────────────────────────────────────────────────────
 
@@ -107,12 +110,15 @@
   doi       = {10.4300/JGME-D-12-00156.1}
 }
 
-@book{Cumming2014,
+@article{Cumming2014,
   author    = {Cumming, Geoff},
-  title     = {Understanding the New Statistics: Effect Sizes, Confidence Intervals, and Meta-Analysis},
-  publisher = {Routledge},
-  year      = {2012},
-  doi       = {10.4324/9780203807002}
+  title     = {The New Statistics: Why and How},
+  journal   = {Psychological Science},
+  year      = {2014},
+  volume    = {25},
+  number    = {1},
+  pages     = {7--29},
+  doi       = {10.1177/0956797613504966}
 }
 
 @article{Simmons2011,
@@ -155,8 +161,9 @@
   author    = {van Buuren, Stef},
   title     = {Flexible Imputation of Missing Data},
   edition   = {2nd},
-  publisher = {CRC Press},
+  publisher = {Chapman and Hall/CRC},
   year      = {2018},
+  doi       = {10.1201/9780429492259},
   url       = {https://stefvanbuuren.name/fimd/},
   note      = {Freely available online}
 }
@@ -184,7 +191,7 @@
   doi       = {10.1038/sdata.2016.18}
 }
 
-@article{Mitchell2019,
+@inproceedings{Mitchell2019,
   author    = {Mitchell, Margaret and Wu, Simone and Zaldivar, Andrew and Barnes, Parker and Vasserman, Lucy and Hutchinson, Ben and Spitzer, Elena and Raji, Inioluwa Deborah and Gebru, Timnit},
   title     = {Model Cards for Model Reporting},
   booktitle = {Proceedings of the Conference on Fairness, Accountability, and Transparency},
@@ -244,7 +251,7 @@
 
 @article{Pearson1895,
   author  = {Pearson, Karl},
-  title   = {Notes on Regression and Inheritance in the Case of Two Parents},
+  title   = {Note on Regression and Inheritance in the Case of Two Parents},
   journal = {Proceedings of the Royal Society of London},
   year    = {1895},
   volume  = {58},
