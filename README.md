@@ -139,22 +139,22 @@ there.
 
 ## Contributing
 
-CADRE is designed for community use. Before contributing:
-
-1. Read `references/philosophy.md` — contributions that contradict the
-   epistemic principles require explicit justification.
-2. All new references added to `bibliography.bib` must include a verified DOI.
-3. All new stage templates must include an exit gate.
-4. If you add a formula, use the template in `references/formula_template.md`.
-5. If you add a language to the glossary, verify terms against published
-   scientific literature in that language.
+CADRE is designed for community use. Read [`CONTRIBUTING.md`](CONTRIBUTING.md)
+before opening a pull request. In short: read `references/philosophy.md` first,
+never add a reference without checking it against its DOI record, give every
+stage template an exit gate, and keep the tests passing.
 
 ---
 
 ## License
 
-- Code and scripts: [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0)
-- Documentation and templates: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+- **Code** (`scripts/`, `tests/`): [Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0).
+  Full text in [`LICENSE`](LICENSE).
+- **Everything else** (`SKILL.md`, `references/`, `assets/`, and
+  documentation): [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+  Full text in [`LICENSE-docs`](LICENSE-docs).
+- **Third-party data** in `examples/` keeps its original license and citation;
+  see each example's README.
 
 ---
 
